@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Green"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/White" >
+
+        <ImageView
+            android:id="@id/ivExypnosLogo"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/exypnos_logo" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etSearchMP"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:background="@color/White"
+        android:gravity="center_vertical"
+        android:hint="Search your medical Provider"
+        android:padding="5dp"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="3dp" >
+
+        <TextView
+            android:id="@id/tvAdvanceSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/advance_search"
+            android:textColor="@color/BlueAdvanceSearch" />
+    </RelativeLayout>
+
+</LinearLayout>
