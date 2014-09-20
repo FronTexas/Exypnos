@@ -142,5 +142,7 @@
     <color name="Navy">#000080</color>
     <color name="Black">#000000</color>
     <color name="BlueAdvanceSearch">#5b9bd5</color>
+    <color name="GreyLoginButton">#dce0ef</color>
+    <color name="GreenInSearchText">#71ac41</color>
 
 </resources>

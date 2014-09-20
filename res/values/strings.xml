@@ -2,5 +2,7 @@
 
     <string name="app_name">Exypnos</string>
     <string name="advance_search"><u><i>Advance Search</i></u></string>
+    <string name="login_with_facebook">Login With Facebook</string>
+    <string name="login_with_google">Login With Google</string>
 
 </resources>
