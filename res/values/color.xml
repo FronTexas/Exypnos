@@ -144,5 +144,6 @@
     <color name="BlueAdvanceSearch">#5b9bd5</color>
     <color name="GreyLoginButton">#dce0ef</color>
     <color name="GreenInSearchText">#71ac41</color>
+    <color name="GreenTosca">#73ae42</color>
 
 </resources>

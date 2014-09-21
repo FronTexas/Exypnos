@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rlDoctorProfileHeader"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/green_blue_gradient_box" >
+
+        <ImageView
+            android:id="@+id/ivDoctorPhotos"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/blue_circle" />
+
+        <LinearLayout
+            android:id="@+id/llDoctorNameAndType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/ivDoctorPhotos"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvDoctorNameHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr. Kuncara Sukasadi"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvDoctorTypeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Family doctor"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llDoctorInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvDoctorNameInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Dr. Kuncara Sukasadi"
+            android:textColor="@color/Gray"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvDoctorTypeInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="General Family Doctor"
+            android:textColor="@color/Gray"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvDoctorAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="12134 Memorial Drive, Houston , TX 77079"
+            android:textColor="@color/BlueAdvanceSearch"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tvDoctorPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Phone : (512)-123-456"
+            android:textColor="@color/Gray"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvDoctorReview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Review : "
+            android:textColor="@color/Gray"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvDoctorAboutMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="About me"
+            android:textColor="@color/BlueAdvanceSearch"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llGreenSeperator"
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@color/GreenTosca"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlAppointmentDate"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/green_oval_box" >
+
+        <TextView
+            android:id="@+id/tvAppointmentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Today - 9/20/2014"
+            android:textColor="@color/White"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+</LinearLayout>
