@@ -8,6 +8,9 @@
 package com.example.exypnos;
 
 public final class R {
+    public static final class array {
+        public static final int planets=0x7f060000;
+    }
     public static final class attr {
     }
     public static final class color {
@@ -165,61 +168,70 @@ public final class R {
         public static final int green_circle=0x7f020005;
         public static final int green_oval_box=0x7f020006;
         public static final int ic_launcher=0x7f020007;
-        public static final int login_withtext=0x7f020008;
-        public static final int signup_withtext=0x7f020009;
+        public static final int ic_navigation_drawer=0x7f020008;
+        public static final int login_withtext=0x7f020009;
+        public static final int signup_withtext=0x7f02000a;
     }
     public static final class id {
-        public static final int etSearchMP=0x7f070010;
-        public static final int ivDoctorPhotos=0x7f070001;
-        public static final int ivExypnosLogo=0x7f07000f;
-        public static final int ivLogin=0x7f070013;
-        public static final int ivSignUp=0x7f070014;
-        public static final int llDoctorInfo=0x7f070005;
-        public static final int llDoctorNameAndType=0x7f070002;
-        public static final int llGreenSeperator=0x7f07000c;
-        public static final int llLoginOptions=0x7f070015;
-        public static final int llLoginSignUp=0x7f070012;
-        public static final int rlAppointmentDate=0x7f07000d;
-        public static final int rlBrowse=0x7f070026;
-        public static final int rlDistance=0x7f070022;
-        public static final int rlDoctorProfileHeader=0x7f070000;
-        public static final int rlDoctorsName=0x7f070017;
-        public static final int rlFind=0x7f070024;
-        public static final int rlGender=0x7f07001d;
-        public static final int rlHospital=0x7f07001b;
-        public static final int rlSpeciality=0x7f070019;
-        public static final int rlZipCode=0x7f070020;
-        public static final int rlZipCodeDistance=0x7f07001f;
-        public static final int tvAdvanceSearch=0x7f070011;
-        public static final int tvAppointmentDate=0x7f07000e;
-        public static final int tvBrowse=0x7f070027;
-        public static final int tvDistance=0x7f070023;
-        public static final int tvDoctorAboutMe=0x7f07000b;
-        public static final int tvDoctorAddress=0x7f070008;
-        public static final int tvDoctorNameHeader=0x7f070003;
-        public static final int tvDoctorNameInfo=0x7f070006;
-        public static final int tvDoctorPhone=0x7f070009;
-        public static final int tvDoctorReview=0x7f07000a;
-        public static final int tvDoctorTypeHeader=0x7f070004;
-        public static final int tvDoctorTypeInfo=0x7f070007;
-        public static final int tvDoctorsName=0x7f070018;
-        public static final int tvFind=0x7f070025;
-        public static final int tvGender=0x7f07001e;
-        public static final int tvHospital=0x7f07001c;
-        public static final int tvLoginWithFacebook=0x7f070016;
-        public static final int tvSpeciality=0x7f07001a;
-        public static final int tvZipCode=0x7f070021;
+        public static final int drawerLayout=0x7f080010;
+        public static final int drawerList=0x7f080012;
+        public static final int etSearchMP=0x7f080014;
+        public static final int ivDoctorPhotos=0x7f080002;
+        public static final int ivExypnosLogo=0x7f080013;
+        public static final int ivHome=0x7f080000;
+        public static final int ivLogin=0x7f080017;
+        public static final int ivSignUp=0x7f080018;
+        public static final int llDoctorInfo=0x7f080006;
+        public static final int llDoctorNameAndType=0x7f080003;
+        public static final int llGreenSeperator=0x7f08000d;
+        public static final int llLoginOptions=0x7f080019;
+        public static final int llLoginSignUp=0x7f080016;
+        public static final int mainContent=0x7f080011;
+        public static final int rlAppointmentDate=0x7f08000e;
+        public static final int rlBrowse=0x7f08002a;
+        public static final int rlDistance=0x7f080026;
+        public static final int rlDoctorProfileHeader=0x7f080001;
+        public static final int rlDoctorsName=0x7f08001b;
+        public static final int rlFind=0x7f080028;
+        public static final int rlGender=0x7f080021;
+        public static final int rlHospital=0x7f08001f;
+        public static final int rlSpeciality=0x7f08001d;
+        public static final int rlZipCode=0x7f080024;
+        public static final int rlZipCodeDistance=0x7f080023;
+        public static final int tvAdvanceSearch=0x7f080015;
+        public static final int tvAppointmentDate=0x7f08000f;
+        public static final int tvBrowse=0x7f08002b;
+        public static final int tvDistance=0x7f080027;
+        public static final int tvDoctorAboutMe=0x7f08000c;
+        public static final int tvDoctorAddress=0x7f080009;
+        public static final int tvDoctorNameHeader=0x7f080004;
+        public static final int tvDoctorNameInfo=0x7f080007;
+        public static final int tvDoctorPhone=0x7f08000a;
+        public static final int tvDoctorReview=0x7f08000b;
+        public static final int tvDoctorTypeHeader=0x7f080005;
+        public static final int tvDoctorTypeInfo=0x7f080008;
+        public static final int tvDoctorsName=0x7f08001c;
+        public static final int tvFind=0x7f080029;
+        public static final int tvGender=0x7f080022;
+        public static final int tvHospital=0x7f080020;
+        public static final int tvLoginWithFacebook=0x7f08001a;
+        public static final int tvSpeciality=0x7f08001e;
+        public static final int tvZipCode=0x7f080025;
     }
     public static final class layout {
-        public static final int doctor_profile=0x7f030000;
-        public static final int homepage=0x7f030001;
-        public static final int search_page_1=0x7f030002;
+        public static final int custom_row=0x7f030000;
+        public static final int doctor_profile=0x7f030001;
+        public static final int drawer=0x7f030002;
+        public static final int homepage=0x7f030003;
+        public static final int search_page_1=0x7f030004;
     }
     public static final class string {
         public static final int advance_search=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int closeDrawer=0x7f050005;
         public static final int login_with_facebook=0x7f050002;
         public static final int login_with_google=0x7f050003;
+        public static final int openDrawer=0x7f050004;
     }
     public static final class style {
         /** 
@@ -243,10 +255,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
 }

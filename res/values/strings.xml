@@ -5,4 +5,13 @@
     <string name="login_with_facebook">Login With Facebook</string>
     <string name="login_with_google">Login With Google</string>
 
+    <string-array name="planets">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+    </string-array>
+
+    <string name="openDrawer">"Drawer is opened"</string>
+    <string name="closeDrawer">"Drawer is closed"</string>
+
 </resources>
