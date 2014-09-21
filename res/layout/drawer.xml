@@ -16,7 +16,7 @@
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="left"
-        android:background="#FF8800"
+        android:background="@color/GreenMilk"
         android:divider="@null" >
     </ListView>
 

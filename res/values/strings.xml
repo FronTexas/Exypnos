@@ -5,10 +5,15 @@
     <string name="login_with_facebook">Login With Facebook</string>
     <string name="login_with_google">Login With Google</string>
 
-    <string-array name="planets">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
+    <string-array name="drawerOptions">
+        <item>Home</item>
+        <item>Appointment</item>
+        <item>Settings</item>
+        <item>Messages</item>
+        <item>Calendar</item>
+        <item>My Health</item>
+        <item>Apps</item>
+        <item>Help</item>
     </string-array>
 
     <string name="openDrawer">"Drawer is opened"</string>
