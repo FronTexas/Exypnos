@@ -1,5 +1,6 @@
 package com.frontexas.exypnos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -52,7 +53,22 @@ public class AdvanceSearchPage extends ExypnosDrawerActivity implements
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.rlFind) {
-
+			String name = etDoctorsName.getText().toString();
+			String speciality = etDoctorSpeciality.getText().toString();
+			String hospital = etDoctorHospital.getText().toString();
+			String gender = etDoctorGender.getText().toString();
+			String zipCode = etZipCode.getText().toString();
+			String distance = etDistance.getText().toString();
+			Intent i = new Intent(AdvanceSearchPage.this,
+					SearchResultsPage.class);
+			i.putExtra("name", name);
+			i.putExtra("speciality", speciality);
+			i.putExtra("hospital", hospital);
+			i.putExtra("gender", gender);
+			i.putExtra("zipCode", zipCode);
+			i.putExtra("distance", distance);
+			i.putExtra("CallingActivity", "AdvanceSearchPage");
+			startActivity(i);
 		}
 	}
 

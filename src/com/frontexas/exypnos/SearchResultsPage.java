@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
@@ -17,8 +19,13 @@ public class SearchResultsPage extends ExypnosDrawerActivity implements
 		OnEditorActionListener {
 	private EditText etSearchMP2;
 	private LinearLayout llDoctorList;
+	private RelativeLayout rlYourOptions;
+	private RelativeLayout rlSearchBox;
 	private ArrayList<Doctors> doctorsList;
 	private String relevantSearch;
+
+	private final String ADVANCE_SEARCH_PAGE = "AdvanceSearchPage";
+	private final String COVER_PAGE = "Coverpage";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +35,20 @@ public class SearchResultsPage extends ExypnosDrawerActivity implements
 		// Make fake data about list of the doctors
 		initializeFakeDoctors();
 
+		initializeViews();
+
 		// Retreive user search 
 		Intent i = getIntent();
-		relevantSearch = i.getExtras().getString("relevantSearch");
+		String callingActivities = i.getExtras().getString("CallingActivity");
+		if (callingActivities.equals(ADVANCE_SEARCH_PAGE)) {
+			rlYourOptions.setVisibility(View.VISIBLE);
+			rlSearchBox.setVisibility(View.GONE);
+		} else {
 
-		initializeViews();
+			relevantSearch = i.getExtras().getString("relevantSearch");
+			rlYourOptions.setVisibility(View.GONE);
+			rlSearchBox.setVisibility(View.VISIBLE);
+		}
 		checkRelevance();
 	}
 
@@ -42,6 +58,9 @@ public class SearchResultsPage extends ExypnosDrawerActivity implements
 			etSearchMP2.setText(relevantSearch);
 		etSearchMP2.setOnEditorActionListener(this);
 		llDoctorList = (LinearLayout) findViewById(R.id.llDoctorList);
+
+		rlSearchBox = (RelativeLayout) findViewById(R.id.rlSearchBox);
+		rlYourOptions = (RelativeLayout) findViewById(R.id.rlYourOptions);
 	}
 
 	private void checkRelevance() {

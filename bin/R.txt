@@ -479,7 +479,7 @@ int id llDistance 0x7f050047
 int id llDoctorGender 0x7f050042
 int id llDoctorHospital 0x7f050040
 int id llDoctorInfo 0x7f05005b
-int id llDoctorList 0x7f050076
+int id llDoctorList 0x7f050078
 int id llDoctorNameAndType 0x7f050064
 int id llDoctorSpeciality 0x7f05003e
 int id llDoctorsName 0x7f05003c
@@ -504,6 +504,7 @@ int id rlFind 0x7f050049
 int id rlLoginWithFacebook 0x7f050054
 int id rlLoginWithGoogle 0x7f050056
 int id rlSearchBox 0x7f050073
+int id rlYourOptions 0x7f050076
 int id rlZipCodeAndDistance 0x7f050044
 int id search_badge 0x7f050032
 int id search_bar 0x7f050031
@@ -543,6 +544,7 @@ int id tvDrawerOption 0x7f050059
 int id tvFind 0x7f05004a
 int id tvLoginWithFacebook 0x7f050055
 int id tvLoginWithGoogle 0x7f050057
+int id tvYourOptions 0x7f050077
 int id up 0x7f050021
 int id useLogo 0x7f050003
 int id withText 0x7f05000c

@@ -1319,7 +1319,7 @@ containing a value of this type.
         public static final int llDoctorGender=0x7f050042;
         public static final int llDoctorHospital=0x7f050040;
         public static final int llDoctorInfo=0x7f05005b;
-        public static final int llDoctorList=0x7f050076;
+        public static final int llDoctorList=0x7f050078;
         public static final int llDoctorNameAndType=0x7f050064;
         public static final int llDoctorSpeciality=0x7f05003e;
         public static final int llDoctorsName=0x7f05003c;
@@ -1344,6 +1344,7 @@ containing a value of this type.
         public static final int rlLoginWithFacebook=0x7f050054;
         public static final int rlLoginWithGoogle=0x7f050056;
         public static final int rlSearchBox=0x7f050073;
+        public static final int rlYourOptions=0x7f050076;
         public static final int rlZipCodeAndDistance=0x7f050044;
         public static final int search_badge=0x7f050032;
         public static final int search_bar=0x7f050031;
@@ -1383,6 +1384,7 @@ containing a value of this type.
         public static final int tvFind=0x7f05004a;
         public static final int tvLoginWithFacebook=0x7f050055;
         public static final int tvLoginWithGoogle=0x7f050057;
+        public static final int tvYourOptions=0x7f050077;
         public static final int up=0x7f050021;
         public static final int useLogo=0x7f050003;
         public static final int withText=0x7f05000c;

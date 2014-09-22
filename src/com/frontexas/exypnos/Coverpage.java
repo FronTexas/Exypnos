@@ -46,6 +46,7 @@ public class Coverpage extends ExypnosDrawerActivity implements
 		if (actionId == EditorInfo.IME_ACTION_SEARCH) {
 			Intent i = new Intent(Coverpage.this, SearchResultsPage.class);
 			i.putExtra("relevantSearch", v.getText().toString());
+			i.putExtra("CallingActivity", "Coverpage");
 			startActivity(i);
 		}
 		return false;
