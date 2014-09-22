@@ -46,4 +46,19 @@ public class Doctors {
 	public boolean isRelelvant(String info) {
 		return name.contains(info) || type.contains(info);
 	}
+
+	/**
+	 * @param all
+	 *            infos about the doctor that user search from advance search
+	 *            page
+	 * @return wether this doctor have something relevant (e.g. the name or the
+	 *         type contains the info).
+	 * */
+	public boolean isRelelvantAdvance(String name, String speciality,
+			String hospital, String gender, String zipcode, String distance) {
+		return (name.length() < 0 || (this.name.contains(name)))
+				&& (speciality.length() < 0 || this.type.contains(speciality))
+				&& (hospital.length() < 0 || this.address.contains(hospital));
+
+	}
 }

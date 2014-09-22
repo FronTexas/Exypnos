@@ -16,10 +16,12 @@ public class DoctorInfoView extends LinearLayout implements OnClickListener {
 	private TextView tvDoctorNameOnSearch, tvDoctorTypeOnSearch,
 			tvDoctorDateOnSearch, tvDoctorAddressOnSearch;
 	private ImageView ivOptionBars;
+	private Doctors doctor;
 
-	public DoctorInfoView(Context context, String doctorName,
+	public DoctorInfoView(Context context, Doctors doctor, String doctorName,
 			String doctorType, String appointmentDate, String doctorAddress) {
 		super(context);
+		this.doctor = doctor;
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		addView(inflater.inflate(R.layout.doctor_info_view, null));
@@ -47,6 +49,10 @@ public class DoctorInfoView extends LinearLayout implements OnClickListener {
 
 		ivOptionBars = (ImageView) findViewById(R.id.ivOptionBars);
 		ivOptionBars.setOnClickListener(this);
+	}
+
+	public Doctors getDoctor() {
+		return doctor;
 	}
 
 	@Override

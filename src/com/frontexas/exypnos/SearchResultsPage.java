@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -16,7 +17,7 @@ import android.widget.TextView.OnEditorActionListener;
 import com.example.exypnos.R;
 
 public class SearchResultsPage extends ExypnosDrawerActivity implements
-		OnEditorActionListener {
+		OnEditorActionListener, OnClickListener {
 	private EditText etSearchMP2;
 	private LinearLayout llDoctorList;
 	private RelativeLayout rlYourOptions;
@@ -43,18 +44,40 @@ public class SearchResultsPage extends ExypnosDrawerActivity implements
 		if (callingActivities.equals(ADVANCE_SEARCH_PAGE)) {
 			rlYourOptions.setVisibility(View.VISIBLE);
 			rlSearchBox.setVisibility(View.GONE);
-		} else {
-
+			checkRelevanceAdvance(i);
+		} else if (callingActivities.equals(COVER_PAGE)) {
 			relevantSearch = i.getExtras().getString("relevantSearch");
 			rlYourOptions.setVisibility(View.GONE);
 			rlSearchBox.setVisibility(View.VISIBLE);
+			checkRelevance();
 		}
-		checkRelevance();
+	}
+
+	private void checkRelevanceAdvance(Intent intent) {
+		for (int i = 0; i < doctorsList.size(); i++) {
+			String name = intent.getExtras().getString("name");
+			String speciality = intent.getExtras().getString("speciality");
+			String hospital = intent.getExtras().getString("hospital");
+			String gender = intent.getExtras().getString("gender");
+			String zipcode = intent.getExtras().getString("zipcode");
+			String distance = intent.getExtras().getString("distance");
+			Doctors doctor = doctorsList.get(i);
+			if (doctor.isRelelvantAdvance(name, speciality, hospital, gender,
+					zipcode, distance)) {
+				DoctorInfoView div = new DoctorInfoView(
+						getApplicationContext(), doctor, doctor.getName(),
+						doctor.getType(), doctor.getAppointmentDate(),
+						doctor.getAddress());
+				div.setOnClickListener(this);
+				llDoctorList.addView(div);
+			}
+
+		}
 	}
 
 	private void initializeViews() {
 		etSearchMP2 = (EditText) findViewById(R.id.etSearchMP2);
-		if (relevantSearch.length() > 0)
+		if (relevantSearch != null && relevantSearch.length() > 0)
 			etSearchMP2.setText(relevantSearch);
 		etSearchMP2.setOnEditorActionListener(this);
 		llDoctorList = (LinearLayout) findViewById(R.id.llDoctorList);
@@ -70,9 +93,10 @@ public class SearchResultsPage extends ExypnosDrawerActivity implements
 			Doctors doctor = doctorsList.get(i);
 			if (doctor.isRelelvant(relevantSearch)) {
 				DoctorInfoView div = new DoctorInfoView(
-						getApplicationContext(), doctor.getName(),
+						getApplicationContext(), doctor, doctor.getName(),
 						doctor.getType(), doctor.getAppointmentDate(),
 						doctor.getAddress());
+				div.setOnClickListener(this);
 				llDoctorList.addView(div);
 			}
 		}
@@ -101,5 +125,17 @@ public class SearchResultsPage extends ExypnosDrawerActivity implements
 			checkRelevance();
 		}
 		return false;
+	}
+
+	@Override
+	public void onClick(View v) {
+		Intent i = new Intent(SearchResultsPage.this, DoctorProfile.class);
+		DoctorInfoView div = (DoctorInfoView) v;
+		Doctors d = div.getDoctor();
+		i.putExtra("name", d.getName());
+		i.putExtra("type", d.getType());
+		i.putExtra("address", d.getAddress());
+		startActivity(i);
+
 	}
 }
