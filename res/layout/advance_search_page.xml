@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/llDoctorsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/curved_button"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/etDoctorsName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="Doctors Name"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:textColor="@color/GreenInSearchText"
+            android:textCursorDrawable="@null"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llDoctorSpeciality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/curved_button"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/etDoctorSpeciality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="Speciality"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:textColor="@color/GreenInSearchText"
+            android:textCursorDrawable="@null"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llDoctorHospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/curved_button"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/etDoctorHospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="Hospital"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:textColor="@color/GreenInSearchText"
+            android:textCursorDrawable="@null"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llDoctorGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/curved_button"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/etDoctorGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="Gender"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:textColor="@color/GreenInSearchText"
+            android:textCursorDrawable="@null"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlZipCodeAndDistance"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" >
+
+        <LinearLayout
+            android:id="@+id/llZipCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/curved_button_small"
+            android:gravity="center" >
+
+            <EditText
+                android:id="@+id/etZipCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="Zip Code"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
+                android:textColor="@color/GreenInSearchText"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/curved_button_small"
+            android:gravity="center" >
+
+            <EditText
+                android:id="@+id/etDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Distance"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
+                android:textColor="@color/GreenInSearchText"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlFind"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/green_circle" >
+
+        <TextView
+            android:id="@+id/tvFind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Find"
+            android:textColor="@color/GreenInSearchText"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlBrowse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/green_oval_box" >
+
+        <TextView
+            android:id="@+id/tvBrowse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Brose A-Z provider"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</LinearLayout>

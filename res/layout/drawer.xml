@@ -3,12 +3,14 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="left"
     android:orientation="vertical" >
 
     <FrameLayout
         android:id="@+id/mainContent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:layoutDirection="ltr" >
     </FrameLayout>
 
     <ListView
@@ -17,7 +19,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="left"
         android:background="@color/GreenMilk"
-        android:divider="@null" >
+        android:divider="@null"
+        android:entries="@array/drawerOptions" >
     </ListView>
 
 </android.support.v4.widget.DrawerLayout>
