@@ -1,102 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Green"
-    android:orientation="vertical" >
+    android:background="@drawable/gradient_blue_green" >
 
-    <EditText
-        android:id="@+id/etSearchMP"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:background="@android:drawable/dialog_holo_light_frame"
-        android:gravity="center_vertical"
-        android:hint="Search your medical Provider"
-        android:imeOptions="actionSearch"
-        android:padding="15dp"
-        android:singleLine="true"
-        android:textSize="15sp" />
-
-    <RelativeLayout
-        android:id="@+id/rlAdvanceSearch"
-        android:layout_width="150dp"
+    <TextView
+        android:id="@+id/ivExypnos_logo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="3dp"
-        android:background="@color/BlueAdvanceSearch" >
-
-        <TextView
-            android:id="@+id/tvAdvanceSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/advance_search"
-            android:textColor="@color/White"
-            android:textSize="15sp" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/llLoginSignUp"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp" >
-
-        <ImageView
-            android:id="@+id/ivLogin"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_alignParentStart="true"
-            android:src="@drawable/login_withtext" />
-
-        <ImageView
-            android:id="@+id/ivSignUp"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/signup_withtext" />
-    </RelativeLayout>
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="200dp"
+        android:text="Exypnos"
+        android:textColor="@color/White"
+        android:textSize="40sp" />
 
     <LinearLayout
-        android:id="@+id/llLoginOptions"
-        android:layout_width="250dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_below="@+id/ivExypnos_logo"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical" >
 
-        <RelativeLayout
-            android:id="@+id/rlLoginWithFacebook"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/GreyLoginButton" >
+        <ImageView
+            android:id="@+id/ivSignInGoogle"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sign_in_box_google" />
 
-            <TextView
-                android:id="@+id/tvLoginWithFacebook"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/login_with_facebook"
-                android:textSize="18sp" />
-        </RelativeLayout>
+        <ImageView
+            android:id="@+id/ivSignInFacebook"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sign_in_box_facebook" />
 
         <RelativeLayout
-            android:id="@+id/rlLoginWithGoogle"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/GreyLoginButton" >
+            android:layout_height="wrap_content" >
 
-            <TextView
-                android:id="@+id/tvLoginWithGoogle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/login_with_google"
-                android:textSize="18sp" />
+            <ImageView
+                android:id="@+id/ivSignInBox"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/sign_in_box" />
+
+            <ImageView
+                android:id="@+id/ivSignUpBox"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/sign_up_box" />
         </RelativeLayout>
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

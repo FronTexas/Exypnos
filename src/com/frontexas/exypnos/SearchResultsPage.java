@@ -1,6 +1,7 @@
 package com.frontexas.exypnos;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import android.content.Intent;
 import android.os.Bundle;

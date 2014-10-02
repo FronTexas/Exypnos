@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@null" >
+
+    <LinearLayout
+        android:id="@+id/llYoudonthaveapt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvYouDontHave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="You Don&apos;t have"
+            android:textColor="@color/GreenDark"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tvAnyAppointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Any appointment"
+            android:textColor="@color/GreenDark"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivCreateAppointment"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/llYoudonthaveapt"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/create_appointment" />
+
+</RelativeLayout>

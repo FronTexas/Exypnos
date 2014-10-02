@@ -146,5 +146,12 @@
     <color name="GreenInSearchText">#71ac41</color>
     <color name="GreenTosca">#73ae42</color>
     <color name="GreenMilk">#e0eadc</color>
+    <color name="BlueExypnos">#37abc8</color>
+    <color name="GreenExypnos">#73ae42</color>
+    <color name="GreenDark">#5f9137</color>
+    <color name="WhiteExypnos">#f9f9f9</color>
+    <color name="GrayLight">#cccccc</color>
+    <color name="GrayDark">#4d4d4d</color>
+    <color name ="GrayLight2">#ececec</color>
 
 </resources>
