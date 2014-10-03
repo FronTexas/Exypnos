@@ -10,15 +10,15 @@ import android.widget.TextView;
 
 import com.example.exypnos.R;
 
-public class HomePageWtApt extends RelativeLayout implements OnClickListener {
+public class HomePageWithoutApt extends RelativeLayout implements OnClickListener {
 	private TextView tvYouDontHave, tvAnyAppointment;
 	private ImageView ivCreateAppointment;
 
-	public HomePageWtApt(Context context) {
+	public HomePageWithoutApt(Context context) {
 		super(context);
 	}
 
-	public HomePageWtApt(Context context, int x) {
+	public HomePageWithoutApt(Context context, int x) {
 		super(context);
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

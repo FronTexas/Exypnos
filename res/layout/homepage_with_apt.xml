@@ -69,6 +69,14 @@
         </LinearLayout>
     </RelativeLayout>
 
+    <ImageView
+        android:id="@+id/ivGreyTriangle"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/llRescheduleOrCancel"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/grey_triangle" />
+
     <LinearLayout
         android:id="@+id/llRescheduleOrCancel"
         android:layout_width="match_parent"
@@ -110,13 +118,15 @@
             android:textColor="@color/GrayDark" />
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/rlAppointmentUpdates"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_below="@+id/llUpdatesTheApt"
         android:background="@color/GrayLight2" >
 
         <LinearLayout
+            android:id="@+id/llQueueStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="17dp"
@@ -132,58 +142,99 @@
                 android:textSize="17sp" />
 
             <LinearLayout
+                android:id="@+id/llPeoplesAhead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal" >
 
-                <RelativeLayout
-                    android:id="@+id/llGreenQueueBox"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/GreenExypnos" >
+                <ImageView
+                    android:id="@+id/ivQueuePeople"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_queue_people_exypnos" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:text="000"
-                        android:textColor="@color/WhiteExypnos"
-                        android:textSize="20sp" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/llBlueQueueBox"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:background="@color/BlueExypnos" >
-
-                    <TextView
-                        android:id="@+id/tvYourNumberText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="5dp"
-                        android:text="Your number"
-                        android:textColor="@color/WhiteExypnos"
-                        android:textSize="7sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tvYourNumberText"
-                        android:layout_centerHorizontal="true"
-                        android:text="000"
-                        android:textColor="@color/WhiteExypnos"
-                        android:textSize="20sp" />
-                </RelativeLayout>
+                <TextView
+                    android:id="@+id/tvPeoplesAhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:text="0 Peoples ahead"
+                    android:textColor="@color/BlueExypnos"
+                    android:textSize="25sp" />
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/rlExpectedTravelTime"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-        </LinearLayout>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/llQueueStatus"
+            android:layout_below="@+id/llQueueStatus"
+            android:layout_marginTop="20dp" >
+
+            <ImageView
+                android:id="@+id/ivCar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_car_green" />
+
+            <TextView
+                android:id="@+id/tvExpectedTravelTimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/ivCar"
+                android:text="Expected travel time"
+                android:textColor="@color/GreenExypnos" />
+
+            <TextView
+                android:id="@+id/tvExpectedTravelTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tvExpectedTravelTimeText"
+                android:layout_below="@+id/tvExpectedTravelTimeText"
+                android:layout_toRightOf="@+id/ivCar"
+                android:text="0 Minutes"
+                android:textColor="@color/GrayDark" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlEstimatedTimeToBeCalled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/llQueueStatus"
+            android:layout_below="@+id/rlExpectedTravelTime"
+            android:layout_marginTop="20dp" >
+
+            <ImageView
+                android:id="@+id/ivClock"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_clock_green" />
+
+            <TextView
+                android:id="@+id/tvEstimatedTimeToBeCalledText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/ivClock"
+                android:text="Estimated time to be called"
+                android:textColor="@color/GreenExypnos" />
+
+            <TextView
+                android:id="@+id/tvEstimatedTimeToBeCalled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tvEstimatedTimeToBeCalledText"
+                android:layout_below="@+id/tvEstimatedTimeToBeCalledText"
+                android:layout_toRightOf="@+id/ivClock"
+                android:text="0 Minutes"
+                android:textColor="@color/GrayDark" />
+        </RelativeLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
