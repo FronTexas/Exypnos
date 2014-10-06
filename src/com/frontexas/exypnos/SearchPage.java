@@ -81,29 +81,40 @@ public class SearchPage extends Activity implements OnClickListener,
 		ArrayList<String> awardsList = new ArrayList<String>();
 		awardsList.add("Best Doctor in Jakarta 2010-2014");
 
+		String[] morning = { "9:00", "9:15", "9:30", "9:45", "10:00", "10:15",
+				"10:30", "10:45", "11:00", "11:15", "11:30", "11:45" };
+		String[] afternoon = { "12:00", "12:15", "12:30", "12:45", "13:00",
+				"13:15", "13:30", "13:45", "14:00", "14:15", "14:30", "14:45" };
+		String[] evening = { "17:00", "17:15", "17:30", "17:45", "18:00",
+				"18:15", "18:30", "18:45", "19:00", "20:00", "20:15", "20:30" };
+
 		Doctor fahran = new Doctor(getApplicationContext(), "Dr.Fahran",
 				"Ebola expert", "10/3/2014", "RS Pondok Indah", tfe);
-		doctorDB.addDoctor(fahran);
 		fahran.setAboutMe(aboutMe);
 		fahran.setAwardList(awardsList);
+		fahran.setAvailableSchedule(morning, afternoon, evening);
+		doctorDB.addDoctor(fahran);
 
 		Doctor toto = new Doctor(getApplicationContext(), "Dr.Toto",
 				"Heart Surgeon", "10/3/2014", "RS Pertamina", tfe);
-		doctorDB.addDoctor(toto);
 		toto.setAboutMe(aboutMe);
 		toto.setAwardList(awardsList);
+		toto.setAvailableSchedule(morning, afternoon, evening);
+		doctorDB.addDoctor(toto);
 
 		Doctor buyung = new Doctor(getApplicationContext(), "Dr.Buyung",
 				"Brain Surgeon", "10/3/2014", "RS Cipto Mangunkusumo", tfe);
-		doctorDB.addDoctor(buyung);
 		buyung.setAboutMe(aboutMe);
 		buyung.setAwardList(awardsList);
+		buyung.setAvailableSchedule(morning, afternoon, evening);
+		doctorDB.addDoctor(buyung);
 
 		Doctor kuncara = new Doctor(getApplicationContext(), "Dr.Kuncara",
 				"Lung Surgeon", "10/3/2014", "RS Bintaro", tfe);
-		doctorDB.addDoctor(kuncara);
 		kuncara.setAboutMe(aboutMe);
 		kuncara.setAwardList(awardsList);
+		kuncara.setAvailableSchedule(morning, afternoon, evening);
+		doctorDB.addDoctor(kuncara);
 
 	}
 

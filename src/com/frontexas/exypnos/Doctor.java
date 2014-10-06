@@ -50,6 +50,11 @@ public class Doctor implements Parcelable {
 	/** The list of award this doctor has */
 	private ArrayList<String> awardsList;
 
+	/** The list of this doctor available schedules */
+	private String[] morningAvailableSchedules;
+	private String[] afternoonAvailableSchedules;
+	private String[] eveningAvailableSchedules;
+
 	public Doctor(Parcel in) {
 		name = in.readString();
 		speciality = in.readString();
@@ -60,6 +65,12 @@ public class Doctor implements Parcelable {
 		in.readStringList(aboutMeList);
 		awardsList = new ArrayList<String>();
 		in.readStringList(awardsList);
+		morningAvailableSchedules = new String[12];
+		in.readStringArray(morningAvailableSchedules);
+		afternoonAvailableSchedules = new String[12];
+		in.readStringArray(afternoonAvailableSchedules);
+		eveningAvailableSchedules = new String[12];
+		in.readStringArray(eveningAvailableSchedules);
 
 	}
 
@@ -122,6 +133,25 @@ public class Doctor implements Parcelable {
 		return awardsList;
 	}
 
+	public void setAvailableSchedule(String[] morning, String[] afternoon,
+			String[] evening) {
+		morningAvailableSchedules = morning;
+		afternoonAvailableSchedules = afternoon;
+		eveningAvailableSchedules = evening;
+	}
+
+	public String[] getMorningSched() {
+		return morningAvailableSchedules;
+	}
+
+	public String[] getAfternoonSched() {
+		return afternoonAvailableSchedules;
+	}
+
+	public String[] getEveningSched() {
+		return eveningAvailableSchedules;
+	}
+
 	/**
 	 * @param info
 	 *            a String that contains info that user want to search
@@ -164,5 +194,8 @@ public class Doctor implements Parcelable {
 		out.writeString(appointmentDate);
 		out.writeStringList(aboutMeList);
 		out.writeStringList(awardsList);
+		out.writeStringArray(morningAvailableSchedules);
+		out.writeStringArray(afternoonAvailableSchedules);
+		out.writeStringArray(eveningAvailableSchedules);
 	}
 }

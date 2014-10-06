@@ -10,6 +10,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.RelativeLayout;
@@ -41,6 +43,12 @@ public class DoctorProfilePage extends Activity implements OnClickListener {
 
 	private TextView tvReadMoreReviewsText;
 
+	private GridView gvMorningAvailableTime;
+	private TextView tvBookForSpecificTimeText, tvDayAndDate, tvMorningText;
+
+	private GridView gvAfternoonAvailableTime;
+	private TextView tvAfternoonText;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -56,38 +64,6 @@ public class DoctorProfilePage extends Activity implements OnClickListener {
 		fillAboutMeList();
 		fillAwardList();
 
-	}
-
-	private void fillAboutMeList() {
-		ArrayList<String> aboutMeList = doctor.getAboutMeList();
-
-		for (int i = 0; i < aboutMeList.size(); i++) {
-			TextView aboutMeTv = new TextView(getApplicationContext());
-			tfe.setTypeface(aboutMeTv, TypefaceExypnos.OPEN_SANS);
-			aboutMeTv.setText(aboutMeList.get(i));
-			aboutMeTv.setTextColor(Color.rgb(77, 77, 77));
-			LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,
-					LayoutParams.WRAP_CONTENT);
-			params.setMargins(0, 0, 0, (int) (3 * scaleDP + 0.5f));
-			params.gravity = Gravity.CENTER_HORIZONTAL;
-			llAboutMeList.addView(aboutMeTv, params);
-		}
-	}
-
-	private void fillAwardList() {
-		ArrayList<String> awardsList = doctor.getAwardsList();
-
-		for (int i = 0; i < awardsList.size(); i++) {
-			TextView awardMeTv = new TextView(getApplicationContext());
-			tfe.setTypeface(awardMeTv, TypefaceExypnos.OPEN_SANS);
-			awardMeTv.setText(awardsList.get(i));
-			awardMeTv.setTextColor(Color.rgb(77, 77, 77));
-			LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,
-					LayoutParams.WRAP_CONTENT);
-			params.setMargins(0, 0, 0, (int) (3 * scaleDP + 0.5f));
-			params.gravity = Gravity.CENTER_HORIZONTAL;
-			llAwardsList.addView(awardMeTv, params);
-		}
 	}
 
 	private void initializeViews() {
@@ -140,11 +116,67 @@ public class DoctorProfilePage extends Activity implements OnClickListener {
 		tvReadMoreReviewsText = (TextView) findViewById(R.id.tvReadMoreReviewsText);
 		tfe.setTypeface(tvReadMoreReviewsText, TypefaceExypnos.OPEN_SANS);
 
+		tvBookForSpecificTimeText = (TextView) findViewById(R.id.tvBookForSpecificTimeText);
+		tfe.setTypeface(tvBookForSpecificTimeText,
+				TypefaceExypnos.LEAGUE_GOTHIC);
+
+		tvDayAndDate = (TextView) findViewById(R.id.tvDayAndDate);
+		tfe.setTypeface(tvDayAndDate, TypefaceExypnos.OPEN_SANS);
+
+		tvMorningText = (TextView) findViewById(R.id.tvMorningText);
+		tfe.setTypeface(tvMorningText, TypefaceExypnos.LEAGUE_GOTHIC);
+
+		gvMorningAvailableTime = (GridView) findViewById(R.id.gvMorningAvailableTime);
+
+		ArrayAdapter<String> adapter_morning = new ArrayAdapter<>(this,
+				android.R.layout.simple_list_item_1, doctor.getMorningSched());
+		gvMorningAvailableTime.setAdapter(adapter_morning);
+
+		tvAfternoonText = (TextView) findViewById(R.id.tvAfternoonText);
+		tfe.setTypeface(tvAfternoonText, TypefaceExypnos.LEAGUE_GOTHIC);
+
+		gvAfternoonAvailableTime = (GridView) findViewById(R.id.gvAfternoonAvailableTime);
+		ArrayAdapter<String> adapter_afternoon = new ArrayAdapter<>(this,
+				android.R.layout.simple_list_item_1, doctor.getAfternoonSched());
+		gvAfternoonAvailableTime.setAdapter(adapter_afternoon);
+
+	}
+
+	private void fillAboutMeList() {
+		ArrayList<String> aboutMeList = doctor.getAboutMeList();
+
+		for (int i = 0; i < aboutMeList.size(); i++) {
+			TextView aboutMeTv = new TextView(getApplicationContext());
+			tfe.setTypeface(aboutMeTv, TypefaceExypnos.OPEN_SANS);
+			aboutMeTv.setText(aboutMeList.get(i));
+			aboutMeTv.setTextColor(Color.rgb(77, 77, 77));
+			LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,
+					LayoutParams.WRAP_CONTENT);
+			params.setMargins(0, 0, 0, (int) (3 * scaleDP + 0.5f));
+			params.gravity = Gravity.CENTER_HORIZONTAL;
+			llAboutMeList.addView(aboutMeTv, params);
+		}
+	}
+
+	private void fillAwardList() {
+		ArrayList<String> awardsList = doctor.getAwardsList();
+
+		for (int i = 0; i < awardsList.size(); i++) {
+			TextView awardMeTv = new TextView(getApplicationContext());
+			tfe.setTypeface(awardMeTv, TypefaceExypnos.OPEN_SANS);
+			awardMeTv.setText(awardsList.get(i));
+			awardMeTv.setTextColor(Color.rgb(77, 77, 77));
+			LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,
+					LayoutParams.WRAP_CONTENT);
+			params.setMargins(0, 0, 0, (int) (3 * scaleDP + 0.5f));
+			params.gravity = Gravity.CENTER_HORIZONTAL;
+			llAwardsList.addView(awardMeTv, params);
+		}
 	}
 
 	@Override
 	public void onClick(View v) {
-
+		
 	}
 
 }

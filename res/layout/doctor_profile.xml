@@ -79,13 +79,6 @@
                 </LinearLayout>
             </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/ivGreyTriangle"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="50dp"
-                android:background="@drawable/grey_triangle" />
-
             <LinearLayout
                 android:id="@+id/llQueueStatusArea"
                 android:layout_width="match_parent"
@@ -107,7 +100,7 @@
                         android:layout_gravity="center_horizontal"
                         android:text="Queue Status"
                         android:textColor="@color/GreenExypnos"
-                        android:textSize="15sp" />
+                        android:textSize="13sp" />
 
                     <LinearLayout
                         android:id="@+id/llPeoplesAhead"
@@ -153,112 +146,219 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/llBookByAvailableSchedule"
+                android:id="@+id/llAboutOnly"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/BlueExypnos"
-                android:gravity="center"
-                android:orientation="horizontal" >
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" >
 
-                <ImageView
-                    android:id="@+id/ivArrowDownBook"
-                    android:layout_width="10dp"
-                    android:layout_height="5dp"
-                    android:src="@drawable/arrow_down_book_by_schedule" />
+                <LinearLayout
+                    android:id="@+id/llBookByAvailableSchedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/BlueExypnos"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
 
-                <TextView
-                    android:id="@+id/tvBookByAvailableScheduleText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="3dp"
-                    android:text="Or book by available schedule"
-                    android:textColor="@color/WhiteExypnos"
-                    android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/tvBookByAvailableScheduleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="3dp"
+                        android:text="Or book by available schedule"
+                        android:textColor="@color/WhiteExypnos"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llAboutAndReviewArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip"
+                    android:layout_weight="1"
+                    android:background="@color/GrayLight2"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/llAboutMe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:visibility="visible" >
+
+                        <TextView
+                            android:id="@+id/tvAboutMeText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="About me"
+                            android:textColor="@color/GreenExypnos" />
+
+                        <LinearLayout
+                            android:id="@+id/llAboutMeList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llAwards"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:visibility="visible" >
+
+                        <TextView
+                            android:id="@+id/tvAwards"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Awards"
+                            android:textColor="@color/GreenExypnos" />
+
+                        <LinearLayout
+                            android:id="@+id/llAwardsList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ivRatingInfoDummy"
+                        android:layout_width="330dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/rating_infos" />
+
+                    <ImageView
+                        android:id="@+id/ivUserCommentsDummy"
+                        android:layout_width="330dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-50dp"
+                        android:src="@drawable/user_comments_dummy" />
+
+                    <TextView
+                        android:id="@+id/tvReadMoreReviewsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-50dp"
+                        android:text="Read more reviews"
+                        android:textColor="@color/BlueExypnos" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/llAboutAndReviewArea"
+                android:id="@+id/llBookSpecificTime"
                 android:layout_width="match_parent"
-                android:layout_height="0dip"
-                android:layout_weight="1"
-                android:background="@color/GrayLight2"
-                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
                 <LinearLayout
-                    android:id="@+id/llAboutMe"
+                    android:id="@+id/llMorningGrid"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:visibility="visible" >
+                    android:layout_height="180dp"
+                    android:background="@color/BlueExypnos"
+                    android:orientation="vertical" >
 
                     <TextView
-                        android:id="@+id/tvAboutMeText"
+                        android:id="@+id/tvBookForSpecificTimeText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="About me"
-                        android:textColor="@color/GreenExypnos" />
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="6dp"
+                        android:text="Book for specific time"
+                        android:textColor="@color/WhiteExypnos"
+                        android:textSize="20sp" />
 
-                    <LinearLayout
-                        android:id="@+id/llAboutMeList"
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tvDayAndDate"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical" >
-                    </LinearLayout>
+                        android:layout_gravity="center_horizontal"
+                        android:text="Today - Jan 1st 2014"
+                        android:textColor="@color/WhiteExypnos"
+                        android:textSize="18sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlMorningBox"
+                        android:layout_width="70dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/round_corner_box_green" >
+
+                        <TextView
+                            android:id="@+id/tvMorningText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Morning"
+                            android:textColor="@color/WhiteExypnos"
+                            android:textSize="15sp" />
+                    </RelativeLayout>
+
+                    <GridView
+                        android:id="@+id/gvMorningAvailableTime"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:columnWidth="70dp"
+                        android:gravity="center"
+                        android:numColumns="auto_fit"
+                        android:stretchMode="columnWidth" >
+                    </GridView>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/llAwards"
+                    android:id="@+id/llAfternoonGrid"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:visibility="visible" >
+                    android:layout_height="180dp"
+                    android:background="@color/BlueExypnosShade1"
+                    android:orientation="vertical" >
 
-                    <TextView
-                        android:id="@+id/tvAwards"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Awards"
-                        android:textColor="@color/GreenExypnos" />
+                    <RelativeLayout
+                        android:id="@+id/rlAfternoonBox"
+                        android:layout_width="70dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/round_corner_box_green" >
 
-                    <LinearLayout
-                        android:id="@+id/llAwardsList"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical" >
-                    </LinearLayout>
+                        <TextView
+                            android:id="@+id/tvAfternoonText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Afternoon"
+                            android:textColor="@color/WhiteExypnos"
+                            android:textSize="15sp" />
+                    </RelativeLayout>
+
+                    <GridView
+                        android:id="@+id/gvAfternoonAvailableTime"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:columnWidth="70dp"
+                        android:gravity="center"
+                        android:numColumns="auto_fit"
+                        android:stretchMode="columnWidth" >
+                    </GridView>
                 </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/ivRatingInfoDummy"
-                    android:layout_width="330dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:src="@drawable/rating_infos" />
-
-                <ImageView
-                    android:id="@+id/ivUserCommentsDummy"
-                    android:layout_width="330dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="-50dp"
-                    android:src="@drawable/user_comments_dummy" />
-
-                <TextView
-                    android:id="@+id/tvReadMoreReviewsText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="-50dp"
-                    android:text="Read more reviews"
-                    android:textColor="@color/BlueExypnos" />
+                <LinearLayout
+                    android:id="@+id/llEveningGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/BlueExypnosShade2"
+                    android:orientation="vertical" >
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
