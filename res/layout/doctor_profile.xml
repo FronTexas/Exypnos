@@ -1,139 +1,266 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient_blue_green"
     android:orientation="vertical" >
 
-    <RelativeLayout
-        android:id="@+id/rlDoctorProfileHeader"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@drawable/green_blue_gradient_box" >
-
-        <ImageView
-            android:id="@+id/ivDoctorPhotos"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/blue_circle" />
+        android:layout_height="match_parent" >
 
         <LinearLayout
-            android:id="@+id/llDoctorNameAndType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@id/ivDoctorPhotos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/tvDoctorNameHeader"
+            <RelativeLayout
+                android:id="@+id/rlDoctorInfos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dr. Kuncara Sukasadi"
-                android:textColor="@color/White"
-                android:textSize="20sp" />
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="70dp" >
 
-            <TextView
-                android:id="@+id/tvDoctorTypeHeader"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Family doctor"
-                android:textColor="@color/White"
-                android:textSize="20sp" />
+                <ImageView
+                    android:id="@+id/ivDoctorPhoto"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_doctor_photo_default" />
+
+                <LinearLayout
+                    android:id="@+id/llDoctorInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/ivDoctorPhoto"
+                    android:orientation="vertical" >
+
+                    <com.frontexas.exypnos.AutoResizeTextView
+                        android:id="@+id/tvDoctorName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="Dr.Buyung"
+                        android:textColor="@color/WhiteExypnos"
+                        android:textSize="50sp" />
+
+                    <com.frontexas.exypnos.AutoResizeTextView
+                        android:id="@+id/tvDoctorSpeciality"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="Doctor&apos;s speciality"
+                        android:textColor="@color/WhiteExypnos"
+                        android:textSize="15sp" />
+
+                    <com.frontexas.exypnos.AutoResizeTextView
+                        android:id="@+id/tvHospitalName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="Hospital Name"
+                        android:textColor="@color/WhiteExypnos"
+                        android:textSize="15sp" />
+
+                    <com.frontexas.exypnos.AutoResizeTextView
+                        android:id="@+id/tvDoctorPhoneNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="(512)- 123 - 1234"
+                        android:textColor="@color/WhiteExypnos"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ivGreyTriangle"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/grey_triangle" />
+
+            <LinearLayout
+                android:id="@+id/llQueueStatusArea"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:background="@color/WhiteExypnos"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/llQueueStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tvQueueStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Queue Status"
+                        android:textColor="@color/GreenExypnos"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:id="@+id/llPeoplesAhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/ivQueuePeople"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_queue_people_exypnos" />
+
+                        <TextView
+                            android:id="@+id/tvPeoplesAhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:text="0 Peoples ahead"
+                            android:textColor="@color/BlueExypnos"
+                            android:textSize="25sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlQueueButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/round_corner_box_green" >
+
+                    <TextView
+                        android:id="@+id/tvQueueText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="10dp"
+                        android:text="Queue"
+                        android:textColor="@color/WhiteExypnos"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llBookByAvailableSchedule"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/BlueExypnos"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/ivArrowDownBook"
+                    android:layout_width="10dp"
+                    android:layout_height="5dp"
+                    android:src="@drawable/arrow_down_book_by_schedule" />
+
+                <TextView
+                    android:id="@+id/tvBookByAvailableScheduleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="3dp"
+                    android:text="Or book by available schedule"
+                    android:textColor="@color/WhiteExypnos"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llAboutAndReviewArea"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                android:background="@color/GrayLight2"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/llAboutMe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="visible" >
+
+                    <TextView
+                        android:id="@+id/tvAboutMeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="About me"
+                        android:textColor="@color/GreenExypnos" />
+
+                    <LinearLayout
+                        android:id="@+id/llAboutMeList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llAwards"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="visible" >
+
+                    <TextView
+                        android:id="@+id/tvAwards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Awards"
+                        android:textColor="@color/GreenExypnos" />
+
+                    <LinearLayout
+                        android:id="@+id/llAwardsList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivRatingInfoDummy"
+                    android:layout_width="330dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/rating_infos" />
+
+                <ImageView
+                    android:id="@+id/ivUserCommentsDummy"
+                    android:layout_width="330dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-50dp"
+                    android:src="@drawable/user_comments_dummy" />
+
+                <TextView
+                    android:id="@+id/tvReadMoreReviewsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-50dp"
+                    android:text="Read more reviews"
+                    android:textColor="@color/BlueExypnos" />
+            </LinearLayout>
         </LinearLayout>
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/llDoctorInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/tvDoctorNameInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="Dr. Kuncara Sukasadi"
-            android:textColor="@color/Gray"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tvDoctorTypeInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="General Family Doctor"
-            android:textColor="@color/Gray"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tvDoctorAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="12134 Memorial Drive, Houston , TX 77079"
-            android:textColor="@color/BlueAdvanceSearch"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/tvDoctorPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="Phone : (512)-123-456"
-            android:textColor="@color/Gray"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tvDoctorReview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="Review : "
-            android:textColor="@color/Gray"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tvDoctorAboutMe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="About me"
-            android:textColor="@color/BlueAdvanceSearch"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/llGreenSeperator"
-        android:layout_width="300dp"
-        android:layout_height="2dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:background="@color/GreenTosca"
-        android:orientation="vertical" >
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlAppointmentDate"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/green_oval_box" >
-
-        <TextView
-            android:id="@+id/tvAppointmentDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Today - 9/20/2014"
-            android:textColor="@color/White"
-            android:textSize="25sp" />
-    </RelativeLayout>
+    </ScrollView>
 
 </LinearLayout>

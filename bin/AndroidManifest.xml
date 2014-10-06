@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.exypnos"
     android:versionCode="1"
@@ -10,10 +11,10 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_exypnos"
-        android:theme="@style/Theme.AppCompat.Light" >
+        android:label="@string/app_name" >
         <activity
             android:name="com.frontexas.exypnos.Coverpage"
-            android:label="" >
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +23,7 @@
         </activity>
         <activity
             android:name="com.frontexas.exypnos.ExypnosDrawerActivity"
-            android:label="" >
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name=".ExypnosDrawer" />
 
@@ -31,7 +32,7 @@
         </activity>
         <activity
             android:name="com.frontexas.exypnos.SearchResultsPage"
-            android:label="" >
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name=".SearchResultsPage" />
 
@@ -40,7 +41,7 @@
         </activity>
         <activity
             android:name="com.frontexas.exypnos.AdvanceSearchPage"
-            android:label="" >
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name=".AdvanceSearchPage" />
 
@@ -48,13 +49,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.frontexas.exypnos.DoctorProfile"
-            android:label="" >
+            android:name="com.frontexas.exypnos.Homepage"
+            android:label="@string/app_name" >
             <intent-filter>
-                <action android:name=".AdvanceSearchPage" />
+                <action android:name=".Homepage" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.frontexas.exypnos.SearchPage"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name=".SearchPage" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.frontexas.exypnos.DoctorProfilePage"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name=".DoctorProfilePage" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>
-</manifest>
+
+</manifest>

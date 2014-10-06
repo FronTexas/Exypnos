@@ -1,66 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@null" >
 
-    <RelativeLayout
-        android:id="@+id/rlDoctorList"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content" >
-
-        <LinearLayout
-            android:id="@+id/llDoctorInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/tvDoctorNameOnSearch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Doctor Name"
-                android:textColor="@color/Gray" />
-
-            <TextView
-                android:id="@+id/tvDoctorTypeOnSearch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Doctor Type"
-                android:textColor="@color/Gray" />
-
-            <TextView
-                android:id="@+id/tvDoctorDateOnSearch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Appointment Date"
-                android:textColor="@color/Gray" />
-
-            <TextView
-                android:id="@+id/tvDoctorAddressOnSearch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Doctor Search"
-                android:textColor="@color/Gray" />
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/ivOptionBars"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_optionbars" />
-    </RelativeLayout>
+    <ImageView
+        android:id="@+id/ivDoctorPhotosDIV"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_doctor_photo_default" />
 
     <LinearLayout
-        android:id="@+id/greenSeparator"
-        android:layout_width="350dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/GreenMilk"
+        android:id="@+id/llDoctorInfosDIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ivDoctorPhotosDIV"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/ivDoctorPhotosDIV"
         android:orientation="vertical" >
+
+        <com.frontexas.exypnos.AutoResizeTextView
+            android:id="@+id/tvDoctorNameDIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="Doctor&apos;s name"
+            android:textColor="@color/GrayDark"
+            android:textSize="30sp" />
+
+        <com.frontexas.exypnos.AutoResizeTextView
+            android:id="@+id/tvDoctorSpecialityDIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="Doctor&apos;s speciality"
+            android:textColor="@color/GrayDark"
+            android:textSize="15sp" />
+
+        <com.frontexas.exypnos.AutoResizeTextView
+            android:id="@+id/tvHospitalNameDIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="Hospital Name"
+            android:textColor="@color/GrayDark"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/llNextAvailableApt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <com.frontexas.exypnos.AutoResizeTextView
+                android:id="@+id/tvNextAvailableAptText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="Next available appointment :"
+                android:textColor="@color/GrayDark"
+                android:textSize="15sp" />
+
+            <com.frontexas.exypnos.AutoResizeTextView
+                android:id="@+id/tvNextAvailableApt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="00:00"
+                android:textColor="@color/GreenExypnos"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llcurrentQueueNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <com.frontexas.exypnos.AutoResizeTextView
+                android:id="@+id/tvCurrentQueueNumberText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="Current Queue number :"
+                android:textColor="@color/GrayDark"
+                android:textSize="15sp" />
+
+            <com.frontexas.exypnos.AutoResizeTextView
+                android:id="@+id/tvCurrentQueueNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="000"
+                android:textColor="@color/GreenExypnos"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llYourQueueNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <com.frontexas.exypnos.AutoResizeTextView
+                android:id="@+id/tvYourQueueNumberText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="Your Queue number :"
+                android:textColor="@color/GrayDark"
+                android:textSize="15sp" />
+
+            <com.frontexas.exypnos.AutoResizeTextView
+                android:id="@+id/tvYourQueueNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="000"
+                android:textColor="@color/BlueExypnos"
+                android:textSize="15sp" />
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+    <View
+        android:layout_width="300dp"
+        android:layout_height="1dip"
+        android:layout_alignLeft="@+id/ivDoctorPhotosDIV"
+        android:layout_alignRight="@+id/llDoctorInfosDIV"
+        android:layout_below="@+id/llDoctorInfosDIV"
+        android:layout_marginTop="9dp"
+        android:background="@color/GreenExypnos" />
+
+</RelativeLayout>

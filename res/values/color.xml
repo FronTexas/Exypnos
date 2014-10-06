@@ -152,6 +152,7 @@
     <color name="WhiteExypnos">#f9f9f9</color>
     <color name="GrayLight">#cccccc</color>
     <color name="GrayDark">#4d4d4d</color>
-    <color name ="GrayLight2">#ececec</color>
+    <color name="GrayLight2">#ececec</color>
+    <color name="GrayLight3">#f2f2f2</color>
 
 </resources>

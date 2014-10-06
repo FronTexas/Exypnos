@@ -3,19 +3,14 @@ package com.frontexas.exypnos;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.view.inputmethod.EditorInfo;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.TextView.OnEditorActionListener;
 
 import com.example.exypnos.R;
 
-public class Coverpage extends Activity implements OnEditorActionListener,
-		OnClickListener {
+public class Coverpage extends Activity implements OnClickListener {
 	private ImageView ivSignInGoogle, ivSignInFacebook, ivSignInBox,
 			ivSignUpBox;
 
@@ -43,20 +38,9 @@ public class Coverpage extends Activity implements OnEditorActionListener,
 	}
 
 	@Override
-	public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-		if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-			Intent i = new Intent(Coverpage.this, SearchResultsPage.class);
-			i.putExtra("relevantSearch", v.getText().toString());
-			i.putExtra("CallingActivity", "Coverpage");
-			startActivity(i);
-		}
-		return false;
-	}
-
-	@Override
 	public void onClick(View v) {
 		if (true) {
-			Intent i = new Intent(Coverpage.this, AdvanceSearchPage.class);
+			Intent i = new Intent(Coverpage.this, Homepage.class);
 			startActivity(i);
 		}
 	}
