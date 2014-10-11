@@ -11,6 +11,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
@@ -112,6 +114,7 @@ public class DoctorProfilePage extends FragmentActivity implements
 		tfe.setTypeface(tvPeoplesAhead, TypefaceExypnos.LEAGUE_GOTHIC);
 
 		rlQueueButton = (RelativeLayout) findViewById(R.id.rlQueueButton);
+
 		rlQueueButton.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -120,8 +123,7 @@ public class DoctorProfilePage extends FragmentActivity implements
 				DoctorConfirmationDialog dialog = DoctorConfirmationDialog
 						.newInstance();
 				dialog.setDoctor(doctor);
-				dialog.show(fm, "some tag");
-
+				dialog.show(fm, DoctorConfirmationDialog.FROM_QUEUE);
 			}
 		});
 
@@ -176,6 +178,7 @@ public class DoctorProfilePage extends FragmentActivity implements
 		gvMorningAvailableTime = (GridView) findViewById(R.id.gvMorningAvailableTime);
 		gvMorningAvailableTime.setAdapter(new DoctorScheduleAdapter(
 				getApplicationContext(), doctor.getMorningSched()));
+		setUpOnItemClickForGV(gvMorningAvailableTime);
 
 		tvAfternoonText = (TextView) findViewById(R.id.tvAfternoonText);
 		tfe.setTypeface(tvAfternoonText, TypefaceExypnos.QUATTROSENTO_BOLD);
@@ -183,6 +186,8 @@ public class DoctorProfilePage extends FragmentActivity implements
 		gvAfternoonAvailableTime = (GridView) findViewById(R.id.gvAfternoonAvailableTime);
 		gvAfternoonAvailableTime.setAdapter(new DoctorScheduleAdapter(
 				getApplicationContext(), doctor.getAfternoonSched()));
+		setUpOnItemClickForGV(gvAfternoonAvailableTime);
+
 
 		tvEveningText = (TextView) findViewById(R.id.tvEveningText);
 		tfe.setTypeface(tvEveningText, TypefaceExypnos.QUATTROSENTO_BOLD);
@@ -190,6 +195,8 @@ public class DoctorProfilePage extends FragmentActivity implements
 		gvEveningAvailableTime = (GridView) findViewById(R.id.gvEveningAvailableTime);
 		gvEveningAvailableTime.setAdapter(new DoctorScheduleAdapter(
 				getApplicationContext(), doctor.getEveningSched()));
+		setUpOnItemClickForGV(gvEveningAvailableTime);
+
 
 		rlArrowUpButton = (RelativeLayout) findViewById(R.id.rlArrowUpButton);
 		rlArrowUpButton.setOnClickListener(new OnClickListener() {
@@ -204,6 +211,24 @@ public class DoctorProfilePage extends FragmentActivity implements
 			}
 		});
 
+	}
+
+	private void setUpOnItemClickForGV(GridView gv) {
+		gv.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				RelativeLayout rl = (RelativeLayout) view;
+				TextView tv_schedule = (TextView) rl.getChildAt(0);
+				doctor.setSelectedSchedule(tv_schedule.getText().toString());
+				DoctorConfirmationDialog dcd = DoctorConfirmationDialog
+						.newInstance();
+				dcd.setDoctor(doctor);
+				dcd.show(getSupportFragmentManager(),
+						DoctorConfirmationDialog.FROM_GV);
+			}
+		});
 	}
 
 	private void fillAboutMeList() {

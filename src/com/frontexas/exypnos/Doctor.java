@@ -54,6 +54,9 @@ public class Doctor implements Parcelable {
 	private String[] morningAvailableSchedules;
 	private String[] afternoonAvailableSchedules;
 	private String[] eveningAvailableSchedules;
+	private ArrayList<String> allSchedules;
+	private int nextAvailableSchedule = 0;
+	private String selectedSchedule;
 
 	public Doctor(Parcel in) {
 		name = in.readString();
@@ -71,6 +74,8 @@ public class Doctor implements Parcelable {
 		in.readStringArray(afternoonAvailableSchedules);
 		eveningAvailableSchedules = new String[12];
 		in.readStringArray(eveningAvailableSchedules);
+		allSchedules = new ArrayList<>();
+		in.readStringList(allSchedules);
 
 	}
 
@@ -135,9 +140,38 @@ public class Doctor implements Parcelable {
 
 	public void setAvailableSchedule(String[] morning, String[] afternoon,
 			String[] evening) {
+
 		morningAvailableSchedules = morning;
 		afternoonAvailableSchedules = afternoon;
 		eveningAvailableSchedules = evening;
+
+		allSchedules = new ArrayList<>();
+		copyArray(allSchedules, morning);
+		copyArray(allSchedules, afternoon);
+		copyArray(allSchedules, evening);
+	}
+
+	public String getNextAvailableSchedule(boolean incrementToSchedule) {
+		String toReturn = allSchedules.get(nextAvailableSchedule);
+		if (incrementToSchedule)
+			nextAvailableSchedule++;
+		return toReturn;
+	}
+
+	public void setSelectedSchedule(String selected) {
+		assert allSchedules.contains(selected);
+		selectedSchedule = selected;
+		allSchedules.remove(selected);
+	}
+
+	public String getSelectedSchedule() {
+		return selectedSchedule;
+	}
+
+	private void copyArray(ArrayList<String> list, String[] arrayToCopy) {
+		for (int i = 0; i < arrayToCopy.length; i++) {
+			list.add(arrayToCopy[i]);
+		}
 	}
 
 	public String[] getMorningSched() {
@@ -197,5 +231,6 @@ public class Doctor implements Parcelable {
 		out.writeStringArray(morningAvailableSchedules);
 		out.writeStringArray(afternoonAvailableSchedules);
 		out.writeStringArray(eveningAvailableSchedules);
+		out.writeStringList(allSchedules);
 	}
 }

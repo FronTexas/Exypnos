@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
@@ -13,6 +14,9 @@ import android.widget.TextView;
 import com.example.exypnos.R;
 
 public class DoctorConfirmationDialog extends DialogFragment {
+
+	final static String FROM_QUEUE = "fromQueue";
+	final static String FROM_GV = "fromGV";
 
 	private Doctor doctor;
 
@@ -55,6 +59,13 @@ public class DoctorConfirmationDialog extends DialogFragment {
 		tvConfirmationText = (TextView) v.findViewById(R.id.tvConfimationText);
 		tfe.setTypeface(tvConfirmationText, TypefaceExypnos.QUATTROSENTO_BOLD);
 		ivXButton = (ImageView) v.findViewById(R.id.ivXButton);
+		ivXButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				dismiss();
+			}
+		});
 
 		ivDoctorPhotoCD = (ImageView) v.findViewById(R.id.ivDoctorPhotoCD);
 
@@ -75,6 +86,11 @@ public class DoctorConfirmationDialog extends DialogFragment {
 
 		ivPlaceIcon = (ImageView) v.findViewById(R.id.ivPlaceIcon);
 		tvTimeCD = (TextView) v.findViewById(R.id.tvTimeCD);
+		if (getTag().equals(FROM_QUEUE))
+			tvTimeCD.setText(doctor.getNextAvailableSchedule(false));
+		else
+			tvTimeCD.setText(doctor.getSelectedSchedule());
+
 		tfe.setTypeface(tvTimeCD, TypefaceExypnos.LEAGUE_GOTHIC);
 
 		tvQueueNumberTextCD = (TextView) v
