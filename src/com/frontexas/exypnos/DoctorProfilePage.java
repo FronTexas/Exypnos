@@ -11,10 +11,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.exypnos.R;
@@ -24,6 +24,9 @@ public class DoctorProfilePage extends Activity implements OnClickListener {
 	private Doctor doctor;
 	private TypefaceExypnos tfe;
 	private float scaleDP;
+
+	private ScrollView svDoctorProfile;
+	private RelativeLayout.LayoutParams paramsSvDoctorProfile;
 
 	private AutoResizeTextView tvDoctorName, tvDoctorSpeciality,
 			tvHospitalName, tvDoctorPhoneNumber;
@@ -79,6 +82,10 @@ public class DoctorProfilePage extends Activity implements OnClickListener {
 	}
 
 	private void initializeViews() {
+		paramsSvDoctorProfile = new RelativeLayout.LayoutParams(
+				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		svDoctorProfile = (ScrollView) findViewById(R.id.svDoctorProfile);
+
 		tvDoctorName = (AutoResizeTextView) findViewById(R.id.tvDoctorName);
 
 		tvDoctorName.setText(doctor.getName());
@@ -116,8 +123,12 @@ public class DoctorProfilePage extends Activity implements OnClickListener {
 
 			@Override
 			public void onClick(View v) {
+				paramsSvDoctorProfile.setMargins(0, 0, 0,
+						(int) (20 * scaleDP + 0.5f));
+				svDoctorProfile.setLayoutParams(paramsSvDoctorProfile);
 				llAboutOnly.setVisibility(View.GONE);
 				llBookSpecificTime.setVisibility(View.VISIBLE);
+				rlArrowUpButton.setVisibility(View.VISIBLE);
 			}
 		});
 
@@ -174,6 +185,9 @@ public class DoctorProfilePage extends Activity implements OnClickListener {
 			public void onClick(View v) {
 				llAboutOnly.setVisibility(View.VISIBLE);
 				llBookSpecificTime.setVisibility(View.GONE);
+				rlArrowUpButton.setVisibility(View.GONE);
+				paramsSvDoctorProfile.setMargins(0, 0, 0, 0);
+				svDoctorProfile.setLayoutParams(paramsSvDoctorProfile);
 			}
 		});
 

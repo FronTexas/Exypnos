@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/gradient_blue_green"
     android:orientation="vertical" >
 
     <ScrollView
+        android:id="@+id/svDoctorProfile"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
@@ -389,21 +390,23 @@
                         android:stretchMode="columnWidth" >
                     </GridView>
                 </LinearLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rlArrowUpButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@color/BlueExypnosShade2" >
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/arrow_up" />
-                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rlArrowUpButton"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/BlueExypnosShade2"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/arrow_up" />
+    </RelativeLayout>
+
+</RelativeLayout>
