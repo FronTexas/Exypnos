@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/WhiteExypnos"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rlConfirmationAndXbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp" >
+
+        <RelativeLayout
+            android:id="@+id/rlConfirmationBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corner_box_green" >
+
+            <TextView
+                android:id="@+id/tvConfimationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="7dp"
+                android:text="Confirmation"
+                android:textColor="@color/WhiteExypnos" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/ivXButton"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_x" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlDoctorPhotosAndInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <ImageView
+            android:id="@+id/ivDoctorPhotoCD"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_doctor_photo_default" />
+
+        <LinearLayout
+            android:id="@+id/llDoctorInfoCD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/ivDoctorPhotoCD"
+            android:orientation="vertical"
+            android:paddingRight="15dp" >
+
+            <TextView
+                android:id="@+id/tvDoctorNameCD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doctor Name"
+                android:textColor="@color/Gray"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tvDoctorTypeCD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doctor Speciality"
+                android:textColor="@color/Gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvDoctorPhoneCD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(512) - 123 - 1234"
+                android:textColor="@color/Gray"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llTimePlaceQueueNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <LinearLayout
+            android:id="@+id/llTimePlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/llPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tvHospitalName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Hospital name"
+                    android:textColor="@color/Gray"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ivPlaceIcon"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="3dp"
+                    android:src="@drawable/ic_place" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvTimeCD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:00"
+                android:textColor="@color/GreenExypnos"
+                android:textSize="50sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llQueueNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvQueueNumberTextCD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Queue Number"
+                android:textColor="@color/Gray"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tvQueueNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500"
+                android:textColor="@color/BlueExypnos"
+                android:textSize="50sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlConfirmButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/BlueExypnos" >
+
+        <TextView
+            android:id="@+id/tvConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Confirm"
+            android:textColor="@color/WhiteExypnos"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+</LinearLayout>

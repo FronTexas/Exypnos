@@ -2,10 +2,11 @@ package com.frontexas.exypnos;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,7 +20,8 @@ import android.widget.TextView;
 
 import com.example.exypnos.R;
 
-public class DoctorProfilePage extends Activity implements OnClickListener {
+public class DoctorProfilePage extends FragmentActivity implements
+		OnClickListener {
 
 	private Doctor doctor;
 	private TypefaceExypnos tfe;
@@ -110,7 +112,18 @@ public class DoctorProfilePage extends Activity implements OnClickListener {
 		tfe.setTypeface(tvPeoplesAhead, TypefaceExypnos.LEAGUE_GOTHIC);
 
 		rlQueueButton = (RelativeLayout) findViewById(R.id.rlQueueButton);
-		rlQueueButton.setOnClickListener(this);
+		rlQueueButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				FragmentManager fm = getSupportFragmentManager();
+				DoctorConfirmationDialog dialog = DoctorConfirmationDialog
+						.newInstance();
+				dialog.setDoctor(doctor);
+				dialog.show(fm, "some tag");
+
+			}
+		});
 
 		tvQueueText = (TextView) findViewById(R.id.tvQueueText);
 		tfe.setTypeface(tvQueueText, TypefaceExypnos.QUATTROSENTO_BOLD);
@@ -124,7 +137,7 @@ public class DoctorProfilePage extends Activity implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 				paramsSvDoctorProfile.setMargins(0, 0, 0,
-						(int) (20 * scaleDP + 0.5f));
+						(int) (30 * scaleDP + 0.5f));
 				svDoctorProfile.setLayoutParams(paramsSvDoctorProfile);
 				llAboutOnly.setVisibility(View.GONE);
 				llBookSpecificTime.setVisibility(View.VISIBLE);
