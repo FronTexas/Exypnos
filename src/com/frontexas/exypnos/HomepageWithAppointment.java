@@ -1,13 +1,18 @@
 package com.frontexas.exypnos;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.exypnos.R;
+import com.nhaarman.listviewanimations.appearance.simple.AlphaInAnimationAdapter;
+import com.nhaarman.listviewanimations.appearance.simple.SwingBottomInAnimationAdapter;
 
 public class HomepageWithAppointment extends RelativeLayout {
 
@@ -20,34 +25,28 @@ public class HomepageWithAppointment extends RelativeLayout {
 	private AutoResizeTextView tvDoctorName;
 
 	// Updates on the appointment text
-	private TextView tvUpdatesOnTheApt;
 
 	/** Appointment Updates */
 
 	// Queues status
-	private LinearLayout llQueueStatus;
 	private TextView tvQueueStatus, tvPeoplesAhead;
 
-	// Expected travel time
-	private RelativeLayout rlExpectedTravelTime;
-	private TextView tvExpectedTravelTimeText, tvExpectedTravelTime;
+	// Listview that will contain : traffic info, estimated time to be called, and any other updates
+	private ListView lvAppointmentUpdates;
 
-	// Estimated time to be called
-	private TextView tvEstimatedTimeToBeCalledText, tvEstimatedTimeToBeCalled;
+	LinearLayout ll;
 
 	public HomepageWithAppointment(Context context) {
 		// this constructor is required
-
 		super(context);
 		this.context = context;
 	}
 
-	public HomepageWithAppointment(Context context, Doctor doctor) {
+	public HomepageWithAppointment(Context context, Doctor doctor,
+			LinearLayout llHomepageWithApt) {
 		super(context);
 		this.context = context;
-		LayoutInflater inflater = (LayoutInflater) context
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		addView(inflater.inflate(R.layout.homepage_with_apt, null));
+		this.ll = llHomepageWithApt;
 
 		this.doctor = doctor;
 
@@ -56,59 +55,68 @@ public class HomepageWithAppointment extends RelativeLayout {
 
 	private void intializeViews() {
 		TypefaceExypnos tfe = new TypefaceExypnos(context);
-
 		// Doctor Infos
-		tvNEXT = (TextView) findViewById(R.id.tvNEXT);
-		Log.d("font error", "FE -- tvNEXT = " + tvNEXT);
+		tvNEXT = (TextView) ll.findViewById(R.id.tvNEXT);
 		tfe.setTypeface(tvNEXT, TypefaceExypnos.OPEN_SANS);
 
-		tvDoctorName = (AutoResizeTextView) findViewById(R.id.tvDoctorName);
-		tfe.setTypeface(tvDoctorName, TypefaceExypnos.OPEN_SANS_BOLD);
+		tvDoctorName = (AutoResizeTextView) ll.findViewById(R.id.tvDoctorName);
+		tfe.setTypeface(tvDoctorName, TypefaceExypnos.DENSE);
 		tvDoctorName.setText(doctor.getName());
 
-		tvDoctorSpeciality = (TextView) findViewById(R.id.tvDoctorSpeciality);
-		tfe.setTypeface(tvDoctorSpeciality, TypefaceExypnos.OPEN_SANS);
+		tvDoctorSpeciality = (TextView) ll
+				.findViewById(R.id.tvDoctorSpeciality);
+		tfe.setTypeface(tvDoctorSpeciality, TypefaceExypnos.QUATTROSENTO_BOLD);
 		tvDoctorSpeciality.setText(doctor.getSpeciality());
 
-		tvHospitalName = (TextView) findViewById(R.id.tvHospitalName);
-		tfe.setTypeface(tvHospitalName, TypefaceExypnos.OPEN_SANS);
+		tvHospitalName = (TextView) ll.findViewById(R.id.tvHospitalName);
+		tfe.setTypeface(tvHospitalName, TypefaceExypnos.QUATTROSENTO_BOLD);
 		tvHospitalName.setText(doctor.getHospitalName());
 
-		tvDoctorPhoneNumber = (TextView) findViewById(R.id.tvDoctorPhoneNumber);
+		tvDoctorPhoneNumber = (TextView) ll
+				.findViewById(R.id.tvDoctorPhoneNumber);
 		tfe.setTypeface(tvDoctorPhoneNumber, TypefaceExypnos.OPEN_SANS);
-		tvDoctorPhoneNumber.setText(doctor.getPhoneNumber());
-
-		// Updates on the appointment text. TEXT ONLY
-		tvUpdatesOnTheApt = (TextView) findViewById(R.id.tvUpdatesOnTheApt);
-		tfe.setTypeface(tvUpdatesOnTheApt, TypefaceExypnos.OPEN_SANS_BOLD);
+		//		tvDoctorPhoneNumber.setText(doctor.getPhoneNumber());
 
 		/** Appointment Updates */
-		// Queue status
-		llQueueStatus = (LinearLayout) findViewById(R.id.llQueueStatus);
 
-		tvQueueStatus = (TextView) findViewById(R.id.tvQueueStatus);
+		tvQueueStatus = (TextView) ll.findViewById(R.id.tvQueueStatus);
 		tfe.setTypeface(tvQueueStatus, TypefaceExypnos.OPEN_SANS_BOLD);
 
-		tvPeoplesAhead = (TextView) findViewById(R.id.tvPeoplesAhead);
+		tvPeoplesAhead = (TextView) ll.findViewById(R.id.tvPeoplesAhead);
 		tfe.setTypeface(tvPeoplesAhead, TypefaceExypnos.LEAGUE_GOTHIC);
 
-		// Expected travel time
-		rlExpectedTravelTime = (RelativeLayout) findViewById(R.id.rlExpectedTravelTime);
+		lvAppointmentUpdates = (ListView) ll
+				.findViewById(R.id.lvAppointmentUpdates);
+		AppointmentUpdatesAdapter aptAdapter = new AppointmentUpdatesAdapter();
+		SwingBottomInAnimationAdapter animationAdapter = new SwingBottomInAnimationAdapter(
+				aptAdapter);
+		animationAdapter.setAbsListView(lvAppointmentUpdates);
+		lvAppointmentUpdates.setAdapter(animationAdapter);
+	}
 
-		tvExpectedTravelTimeText = (TextView) findViewById(R.id.tvExpectedTravelTimeText);
-		tfe.setTypeface(tvExpectedTravelTimeText,
-				TypefaceExypnos.OPEN_SANS_BOLD);
+	class AppointmentUpdatesAdapter extends BaseAdapter {
 
-		tvExpectedTravelTime = (TextView) findViewById(R.id.tvExpectedTravelTime);
-		tfe.setTypeface(tvExpectedTravelTime, TypefaceExypnos.OPEN_SANS_BOLD);
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return 5;
+		}
 
-		// Estimated time to be called
-		tvEstimatedTimeToBeCalledText = (TextView) findViewById(R.id.tvEstimatedTimeToBeCalledText);
-		tfe.setTypeface(tvEstimatedTimeToBeCalledText,
-				TypefaceExypnos.OPEN_SANS_BOLD);
+		@Override
+		public Object getItem(int arg0) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 
-		tvEstimatedTimeToBeCalled = (TextView) findViewById(R.id.tvEstimatedTimeToBeCalled);
-		tfe.setTypeface(tvEstimatedTimeToBeCalled,
-				TypefaceExypnos.OPEN_SANS_BOLD);
+		@Override
+		public long getItemId(int arg0) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		@Override
+		public View getView(int arg0, View arg1, ViewGroup arg2) {
+			return new TrafficInfoCard(context);
+		}
 	}
 }

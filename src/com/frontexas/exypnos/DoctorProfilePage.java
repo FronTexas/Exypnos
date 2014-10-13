@@ -105,7 +105,7 @@ public class DoctorProfilePage extends FragmentActivity implements
 
 		tvDoctorPhoneNumber = (AutoResizeTextView) findViewById(R.id.tvDoctorPhoneNumber);
 		//		tvDoctorPhoneNumber.setText(doctor.getPhoneNumber());
-		tfe.setTypeface(tvDoctorPhoneNumber, TypefaceExypnos.QUATTROSENTO_BOLD);
+		tfe.setTypeface(tvDoctorPhoneNumber, TypefaceExypnos.OPEN_SANS);
 
 		tvQueueStatus = (TextView) findViewById(R.id.tvQueueStatus);
 		tfe.setTypeface(tvQueueStatus, TypefaceExypnos.QUATTROSENTO_BOLD);
@@ -188,7 +188,6 @@ public class DoctorProfilePage extends FragmentActivity implements
 				getApplicationContext(), doctor.getAfternoonSched()));
 		setUpOnItemClickForGV(gvAfternoonAvailableTime);
 
-
 		tvEveningText = (TextView) findViewById(R.id.tvEveningText);
 		tfe.setTypeface(tvEveningText, TypefaceExypnos.QUATTROSENTO_BOLD);
 
@@ -196,7 +195,6 @@ public class DoctorProfilePage extends FragmentActivity implements
 		gvEveningAvailableTime.setAdapter(new DoctorScheduleAdapter(
 				getApplicationContext(), doctor.getEveningSched()));
 		setUpOnItemClickForGV(gvEveningAvailableTime);
-
 
 		rlArrowUpButton = (RelativeLayout) findViewById(R.id.rlArrowUpButton);
 		rlArrowUpButton.setOnClickListener(new OnClickListener() {

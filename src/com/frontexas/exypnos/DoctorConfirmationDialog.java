@@ -1,5 +1,6 @@
 package com.frontexas.exypnos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
@@ -87,9 +88,9 @@ public class DoctorConfirmationDialog extends DialogFragment {
 		ivPlaceIcon = (ImageView) v.findViewById(R.id.ivPlaceIcon);
 		tvTimeCD = (TextView) v.findViewById(R.id.tvTimeCD);
 		if (getTag().equals(FROM_QUEUE))
-			tvTimeCD.setText(doctor.getNextAvailableSchedule(false));
+			tvTimeCD.setText(doctor.peekNextAvailableSchedule());
 		else
-			tvTimeCD.setText(doctor.getSelectedSchedule());
+			tvTimeCD.setText(doctor.peekSelectedSchedule());
 
 		tfe.setTypeface(tvTimeCD, TypefaceExypnos.LEAGUE_GOTHIC);
 
@@ -102,6 +103,19 @@ public class DoctorConfirmationDialog extends DialogFragment {
 
 		rlConfirmButton = (RelativeLayout) v.findViewById(R.id.rlConfirmButton);
 		tvConfirm = (TextView) v.findViewById(R.id.tvConfirm);
+		rlConfirmButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				Intent i = new Intent(getActivity().getApplicationContext(),
+						Homepage.class);
+				Bundle b = new Bundle();
+				b.putParcelable("theDoctor", doctor);
+				i.putExtras(b);
+				startActivity(i);
+
+			}
+		});
+
 		tfe.setTypeface(tvConfirm, TypefaceExypnos.LEAGUE_GOTHIC);
 
 	}

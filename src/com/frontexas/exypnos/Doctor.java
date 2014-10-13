@@ -151,21 +151,29 @@ public class Doctor implements Parcelable {
 		copyArray(allSchedules, evening);
 	}
 
-	public String getNextAvailableSchedule(boolean incrementToSchedule) {
+	public String peekNextAvailableSchedule() {
+		return allSchedules.get(nextAvailableSchedule);
+	}
+
+	public String popNextAvailableSchedule() {
 		String toReturn = allSchedules.get(nextAvailableSchedule);
-		if (incrementToSchedule)
-			nextAvailableSchedule++;
+		nextAvailableSchedule++;
 		return toReturn;
 	}
 
 	public void setSelectedSchedule(String selected) {
 		assert allSchedules.contains(selected);
 		selectedSchedule = selected;
-		allSchedules.remove(selected);
 	}
 
-	public String getSelectedSchedule() {
+	public String peekSelectedSchedule() {
 		return selectedSchedule;
+	}
+
+	public String popSelectedSchedule() {
+		String toReturn = selectedSchedule;
+		allSchedules.remove(toReturn);
+		return toReturn;
 	}
 
 	private void copyArray(ArrayList<String> list, String[] arrayToCopy) {

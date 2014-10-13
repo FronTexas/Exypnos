@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/WhiteExypnos" >
+
+    <ImageView
+        android:id="@+id/ivCar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/car_icon_gray" />
+
+    <LinearLayout
+        android:id="@+id/llRouteInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/ivCar"
+        android:orientation="vertical"
+        android:paddingBottom="7dp" >
+
+        <TextView
+            android:id="@+id/tvRouteInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="via Some Street"
+            android:textColor="@color/GreenExypnos"
+            android:textSize="45sp" />
+
+        <TextView
+            android:id="@+id/tvETAWithoutTraffic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 min without traffic"
+            android:textColor="@color/GrayLight"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llETAAndDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/llRouteInfo"
+        android:orientation="vertical"
+        android:paddingRight="10dp" >
+
+        <TextView
+            android:id="@+id/tvETA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 min"
+            android:textColor="@color/Gray"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/tvDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0 km"
+            android:textColor="@color/GrayLight"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</RelativeLayout>
